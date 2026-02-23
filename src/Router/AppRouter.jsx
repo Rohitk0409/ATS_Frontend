@@ -15,7 +15,7 @@ const AppRouter = () => {
     queryClient.prefetchQuery({
       queryKey: ["feedbacks"],
       queryFn: async () => {
-        const { data } = await api.get("/api/v1/feedback");
+        const { data } = await api.get("/v1/feedback");
         return data.data;
       },
     });

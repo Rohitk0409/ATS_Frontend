@@ -1,8 +1,7 @@
 // HomePage.jsx
-import axios from "axios";
 import { useState } from "react";
-import Result from "./Result";
 import api from "../../Hooks/api";
+import Result from "./Result";
 function HomePage() {
   const [jobDescription, setJobDescription] = useState("");
   const [resumeFile, setResumeFile] = useState(null);
@@ -42,7 +41,7 @@ function HomePage() {
       const formData = new FormData();
       formData.append("resumeFile", resumeFile);
       formData.append("jobDescription", jobDescription);
-
+      console.log(api);
       const response = await api.post("/v1/resume/ats", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
